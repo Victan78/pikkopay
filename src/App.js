@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import cadenas from './cadenas.svg';
-import Name_input from './name-input';
+import Nameinput from './nameInput';
 import logo from './icon.svg';
 
 const PaygreenPayment = () => {
@@ -110,7 +110,7 @@ const PaygreenPayment = () => {
     };
 
     initPGJS();
-  }, [scriptLoaded]);
+  }, );
 
   if (loadError) {
     return <p>Error: {loadError}</p>;
@@ -124,7 +124,7 @@ const PaygreenPayment = () => {
       <div className="pay-form">
         <div className='titre'><h3>Regler en ligne</h3></div>
         <div>
-          <Name_input />
+          <Nameinput/>
         </div>
         <div>
           <label>Numero de la carte</label>
