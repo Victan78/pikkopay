@@ -1,0 +1,302 @@
+body {
+  font-family: "Gill Sans", sans-serif;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+}
+
+.secured-label{
+  color: #181818a3 ;
+  position: absolute;
+  bottom: 10dvh;
+  left: 50%;
+  font-size: 1rem;
+  width: 300px;
+  transform: translateX(-50%);
+}
+.check-icon{
+  position: absolute;
+  display: none;
+  right: 1rem;
+  top: 2rem;
+}
+.titre{position: relative;
+width: 150px;}
+.titre h3{
+  font-size: 1.4rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+.titre::before{
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 6px;
+  bottom: 25px;
+  right: 0;
+  background: linear-gradient(130deg, rgb(255, 255, 0),rgb(191, 255, 0));
+  z-index: 1;
+}
+.App-logo{
+  background: rgb(3, 3, 41);
+  padding: .5rem;
+  width:150px;
+  border-radius: .25rem;
+  z-index: 2;
+  transform: translate(10px,25px);
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0px 0px 0px 1px rgba(60, 60, 61, 0.166);
+ transition: all 0.3s;
+ border: solid transparent;
+}
+
+.App-logo:hover{
+  transform:translate(10px,25px) perspective(800px) rotateX(30deg);
+  border: solid rgb(226, 255, 7);
+}
+.loader{
+  display: none;
+  position: absolute;
+  bottom: 2dvh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+}
+
+.load{
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  box-sizing: border-box;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow:inset 0px 0px 10px rgba(30, 30, 23, 0.243), 0px 0px 10px rgba(57, 57, 49, 0.28);
+  position: relative;
+  border: 2px solid rgb(12, 5, 38);
+  border-top-color: rgba(86, 85, 85, 0.227);
+  border-right-color:rgba(86, 85, 85, 0.227) ;
+ 
+  animation: rotate 1s infinite linear;
+}
+
+.load::after{
+  content: "";
+  width: 8px;
+  height: 8px;
+  transform: translateY(4px);
+  border-radius: 50%;
+  background-color: rgb(9, 4, 34);
+ 
+  position: absolute;
+}
+
+.loader::after{
+  content: "🔒";
+  font-size: 10px;
+  color: rgba(86, 85, 2, 0.616);
+  text-shadow: 0px 0px 1px rgb(205, 206, 189);
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.button {
+  cursor: pointer;
+  outline: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  line-height: 1.5;
+  gap: .5rem;
+  background: linear-gradient(130deg, rgb(255, 255, 0),rgb(191, 255, 0));
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 1.2rem;
+  border-radius: .5rem;
+  transition: all 0.5s;
+  color: #181818;
+  cursor: pointer;
+  width: 100%;
+  overflow: hidden;
+  
+}
+
+
+
+
+.button:hover {
+  background: linear-gradient(90deg, rgb(255, 255, 0), rgb(191, 255, 0));
+  border: solid 1px rgba(83, 125, 21, 0.598);
+}
+
+.button:active{
+  transform:scale(0.9);
+}
+
+.pay-form {
+  width : 500px;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: .25rem;
+  background: rgb(251, 251, 251);
+      box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0px 0px 0px 1px rgba(60, 60, 61, 0.166);
+      
+  
+}
+
+.pay-form > div {
+  margin-top: 2rem;
+  
+}
+
+.pay-form  >label {
+  color: rgb(35, 34, 34);
+  font-weight: 400;
+ 
+  
+  
+  
+}
+
+.name_box{
+  display: flex;
+  flex-direction: column;
+}
+
+.name_box input{
+  border-radius: .25rem;
+  margin-top:.5rem ;
+  padding: 0.8rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px 0 rgba(19,57,94,.2);
+  background-color: rgb(255, 255, 255);
+  transition: all .1s;
+  border: none !important;
+}
+
+
+.pay-form > .button {
+  align-self: center;
+  
+}
+
+
+.paygreen-pan-frame, .paygreen-cvv-frame, .paygreen-exp-frame {
+  
+  padding: 0 0.5rem;
+  border: none !important;
+  transition: all .1s;
+  background: rgb(255, 255, 255);
+  
+}
+
+.paygreen-pan-frame:hover, .paygreen-cvv-frame:hover, .paygreen-exp-frame:hover {
+  border-left: #0d0523ef solid 2px !important;
+}
+
+.paygreen-pan-frame:focus{
+  border-left: #0d0523ef solid 2px !important;
+}
+
+.paygreen-pan-frame:focus, .paygreen-cvv-frame:focus, .paygreen-exp-frame:focus{
+  
+  border-left: #0d0523ef solid 2px !important;
+  outline: none;
+}
+
+.name_box input:hover{
+  
+  border-left: #0d0523ef solid 2px !important;
+}
+
+.name_box input:focus{
+  border-left: #0d0523ef solid 2px !important;
+  outline: none;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line > div {
+  max-width: 48%;
+}
+
+
+
+#paygreen-reuse-checkbox-container {
+  margin-top: 1rem;
+  height: 60px;
+}
+
+
+
+@media  screen and (max-width:900px) {
+ 
+  body{
+    padding: 0;
+    overflow: hidden;
+  
+  }
+  .check-icon{
+    display: block;
+  }
+  #paygreen-reuse-checkbox-container {
+    margin-top: 1rem;
+    
+  }
+  .App-logo:hover{
+    transform:translate(10px,25px);
+  }
+  .pay-form {
+    position: relative;
+    width : calc(100% - 2rem);
+    height: 80dvh;
+    margin-top: 5dvh;
+    box-shadow: 0px 0px 0px black;
+    padding: 1rem;
+    background: transparent;
+    
+  }
+  .button{
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+  }
+  @media  screen and (max-width:300px) {
+ .secured-label{
+  display: none;
+ }
+ .pay-form{
+  margin-top: 0;
+  
+ }
+
+
+  }
+}
+.hidden{
+  display: none;
+}
+.visible{
+  display: flex;
+}
