@@ -18,6 +18,7 @@ function Name_input() {
         </label>
             <input 
                 type="text" 
+                className='input'
                 value={texte} 
                 onChange={handleChange} 
                 placeholder="Nom"

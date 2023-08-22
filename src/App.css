@@ -180,7 +180,7 @@ width: 150px;}
   flex-direction: column;
 }
 
-.name_box input{
+.name_box .input{
   border-radius: .25rem;
   margin-top:.5rem ;
   padding: 0.8rem 0.5rem;
